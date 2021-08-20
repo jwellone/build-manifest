@@ -7,8 +7,12 @@
 
 
 # build-manifest
-Get the build time, commit id, branch name, etc.
-Please use it for debugging purposes.
+Get various information about the current build.
+
+e.g.
+- build time
+- commit id
+- branch name
 
 This feature is one of the "UniExtensions" developed by jwellone Inc for Unity.
 
