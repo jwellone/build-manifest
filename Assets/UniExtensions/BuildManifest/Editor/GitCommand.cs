@@ -9,6 +9,7 @@ namespace UniExtensions.Editor
 {
 	public static class GitCommand
 	{
+		static readonly string GIT_NAME = SystemInfo.operatingSystem.Contains("Windows") ? "git.exe" : "git";
 		static readonly string KEY_WORKING_DIRECTORY = "USER_SETTING_GIT_UTIL_WORKING_DIRECTORY";
 
 		public static string GetWorkingDirectory()
@@ -24,8 +25,7 @@ namespace UniExtensions.Editor
 
 		public static Task<string> Exec(string args)
 		{
-			var fileName = SystemInfo.operatingSystem.Contains("Windows") ? "git.exe" : "git";
-			return ProcessStart(fileName, args);
+			return ProcessStart(GIT_NAME, args);
 		}
 
 		public static Task<string> GetVersion()
