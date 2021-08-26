@@ -24,7 +24,8 @@ namespace UniExtensions.Editor
 
 		public static Task<string> Exec(string args)
 		{
-			return ProcessStart("git", args);
+			var fileName = SystemInfo.operatingSystem.Contains("Windows") ? "git.exe" : "git";
+			return ProcessStart(fileName, args);
 		}
 
 		public static Task<string> GetVersion()
