@@ -1,5 +1,5 @@
 {
-    "name": "UniExtensions.BuildManifest.Runtime",
+    "name": "jwellone.BuildManifest.Runtime",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

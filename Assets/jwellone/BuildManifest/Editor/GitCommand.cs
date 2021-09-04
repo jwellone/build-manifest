@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using ProcessStartInfo = System.Diagnostics.ProcessStartInfo;
 
-namespace UniExtensions.Editor
+namespace jwellone.Editor
 {
 	public static class GitCommand
 	{

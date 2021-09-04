@@ -5,12 +5,11 @@ using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
-using UniExtensions.Editor;
+using jwellone.Editor;
 
-namespace UniExtensions.Build.Editor
+namespace jwellone.Build.Editor
 {
-	public class BuildProcesserForBuildManifest : IPreprocessBuildWithReport,
-		IPostprocessBuildWithReport
+	public class BuildProcesserForBuildManifest : IPreprocessBuildWithReport, IPostprocessBuildWithReport
 	{
 		public int callbackOrder => 0;
 
@@ -38,9 +37,6 @@ namespace UniExtensions.Build.Editor
 					AssetDatabase.SaveAssets();
 				}
 
-				var defineSymbols =
-					PlayerSettings.GetScriptingDefineSymbolsForGroup(report.summary.platformGroup);
-
 				var tCommitId = GitCommand.GetShortCommitId();
 				tCommitId.Wait();
 
@@ -51,8 +47,6 @@ namespace UniExtensions.Build.Editor
 				var branchName = tBranchName.Result;
 				var json = JsonUtility.ToJson(
 					new BuildManifest(
-						DateTime.Now.ToString("yyyy/M/d/hh:mm:ss"),
-						defineSymbols,
 						shortCommitId,
 						branchName
 						));
