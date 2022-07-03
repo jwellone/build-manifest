@@ -45,7 +45,7 @@ namespace jwellone.Editor
 
 		public static Task<string> GetBranchName()
 		{
-			return Exec("rev-parse --abbrev-ref --short HEAD");
+			return Exec("rev-parse --abbrev-ref @");
 		}
 
 		public static Task<string> GetLog()
