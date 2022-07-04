@@ -35,12 +35,12 @@ namespace jwellone.Editor
 
 		public static Task<string> GetCommitId()
 		{
-			return Exec("rev-parse HEAD");
+			return Exec("rev-parse @");
 		}
 
 		public static Task<string> GetShortCommitId()
 		{
-			return Exec("rev-parse --short HEAD");
+			return Exec("rev-parse --short @");
 		}
 
 		public static Task<string> GetBranchName()
